@@ -2,8 +2,8 @@ const nodemailer=require('../config/nodemailer');
 exports.newComment=(comment)=>{
     let htmlStrings=nodemailer.renderTemplate({comment:comment},'/comments/new_comments.ejs');
     nodemailer.transporter.sendMail({
-        from:"singharush537@gmail.com",
-        to:'kushwahaa1705@gmail.com',
+        from:"singh@gmail.com",
+        to:'kush@gmail.com',
         subject:"new email publishhed",
         html:htmlStrings
     },

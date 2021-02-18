@@ -20,8 +20,8 @@ const development={
         port:587,
         secure:false,
         auth:{
-            user:'singharush537@gmail.com',
-            pass:'@Kushwaha@ditya19981705'
+            user:'singjnjnjnj',
+            pass:'jjnjnjnjnjk'
         }
     },
     google_clientID:"172003653863-nqr3fkd7s0eeskjntk9vf3ijqqgsueca.apps.googleusercontent.com",
