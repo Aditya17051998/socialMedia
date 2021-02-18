@@ -1,0 +1,65 @@
+<li id="post-<%=post._id%>"><%=post.content%>
+
+    <% if(locals.user && (locals.user.id==post.user.id)) {%>
+
+        <small>
+            <a class="delete_post_button" href="/posts/destroy/<%=post.id%>">
+            x
+            </a>
+        </small>
+
+    <%}%>
+
+
+    
+
+    <small><%=post.user.name%></small>
+     <!-- CHANGE :: display the likes of this post, if the user is logged in, then show the link to toggle likes, else, just show the count -->
+     <br>
+     <!-- study about the data attribute -->
+ <small>
+     <% if (locals.user){ %>
+         <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=post">
+                 <%= post.likes.length %> Likes
+         </a>
+     <% }else{ %>
+         <%= post.likes.length %> Likes
+     <% } %>
+ </small>
+
+    <div class='comment-container'>
+
+        <form action="comments/create" method="POST">
+            <input type="text" placeholder="write comment..." name='content'>
+            <input type="hidden" name='post' value='<%=post._id%>'>
+            <input type="submit" value="post">
+        
+        </form>
+
+        <% for(comment of post.comment) {%>
+            
+            <h1><%=comment.content%></h1>
+
+
+
+            <% if(locals.user && (locals.user.id==comment.user.id)) {%>
+
+                <small>
+                    <a href="/comments/destroy/<%=comment.id%>">
+                        X
+                    </a>
+                </small>
+
+            <%}%>
+
+
+
+
+
+
+            <small><%=comment.user.name%></small>
+            
+        <%}%>
+
+    </div>
+</li>

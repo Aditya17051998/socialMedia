@@ -1,0 +1,32 @@
+body {
+    background-color: aqua;
+}
+.chat_box{
+    float:right;
+    width:40vh;
+}
+#user-chat-box {
+    background-color: aliceblue;
+    height:30vh;
+    position: fixed;
+    top:50px;
+    display: flex;
+    flex-direction: column;
+}
+.other-message {
+    position: relative;
+    background-color: bisque;
+    list-style: none;
+    left:-30px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+.self-message {
+    align-items: flex-end;
+    background-color: greenyellow;
+    list-style: none;
+}
+#chat-message-input-container{
+    position: relative;
+    top:18vh;
+}
